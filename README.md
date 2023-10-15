@@ -10,6 +10,7 @@ This guide will walk you through the steps to set up and run this Django web app
   - [Installation](#installation)
   - [Running the Application](#running-the-application)
 - [Contributing](#contributing)
+- [Contributors](#contributors)
 - [Project Status](#project-status)
 
 ## Introduction
@@ -77,7 +78,15 @@ Follow these steps to set up and run the Django application:
 ## Contributing
 
  We welcome your contributions to [Project Procrastinate]! Start by forking the repository, cloning it to your local machine, creating a new branch, making your changes, and committing them. Then, push your changes to your fork on GitHub and create a pull request. Your contributions will be reviewed and, once approved, merged into the main project. Thank you for your help!
- 
+## Contributors
+
+A big thank you to the following contributors who have helped improve this project:
+
+- Sonakshi Badlani ([@s0naksh1](https://github.com/s0naksh1))
+- Parshva Mody ([@parshvamody15](https://github.com/parshvamody15))
+
+Your contributions are greatly appreciated!
+
 ## Project Status
 
 This project is currently under active development, and new features and improvements are being added regularly. While it is functional, there may be occasional updates that could affect usage. We appreciate your understanding and patience as we work to enhance this application. If you encounter any issues or have suggestions, please [open an issue](https://github.com/rakshit-ayachit/project_procrastinate/issues). Your feedback is valuable to us!
