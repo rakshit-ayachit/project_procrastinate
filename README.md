@@ -28,10 +28,10 @@ Before you get started, make sure you have the following prerequisites installed
    python3 -m venv test
 
 4. **Activate the virtual environment**:
--On Windows:
+- On Windows:
    ```bash
   test\Scripts\activate
--On macOS and Linux:
+- On macOS and Linux:
    ```bash
   source test/bin/activate
    ```
