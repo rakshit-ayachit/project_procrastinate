@@ -1,0 +1,75 @@
+C:\Users\USER\Documents\django_registration\register\app1\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\django_registration\register\register\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /home/CSA.html
+Not Found: /home/CSA.html
+Not Found: /dsa/home.css
+Not Found: /home/CSA.html
+Not Found: /home/CSA.html
+Not Found: /csa/home.css
+Not Found: /csa/chapter1.html
+Not Found: /home/MATH.html
+Not Found: /home/MATH.html
+Not Found: /home/MATH.html
+Not Found: /fne/home.css
+Not Found: /home/MATH.html
+Watching for file changes with StatReloader
+Not Found: /1.jpg
+Not Found: /favicon.ico
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\django_registration\register\app1\views.py", line 22, in SignupPage
+    my_user=User.objects.create_user(uname,email,pass1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+C:\Users\USER\Documents\django_registration\register\register\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\django_registration\register\register\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\django_registration\register\app1\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /1.jpg
+Not Found: /login/1.jpg
+Not Found: /subjects_1/dsa/home.css
+Not Found: /subjects_1/csa/home.css
+Not Found: /subjects_1/csa/logout.html
+Not Found: /subjects_1/csa/chapter1.html
+Watching for file changes with StatReloader
+Not Found: /1.jpg
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\django_registration\register\app1\views.py", line 22, in SignupPage
+    my_user=User.objects.create_user(uname,email,pass1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+Not Found: /login/1.jpg
+Not Found: /subjects_1/dsa/home.css
+Not Found: /subjects_1/dsa/chapter1.html
+Watching for file changes with StatReloader
+Not Found: /1.jpg
+Not Found: /login/1.jpg
+Not Found: /subjects_1/dsa/home.css

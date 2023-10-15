@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .chapter {
+            border: 1px solid #ddd; /* Add a border */
+            padding: 10px; /* Add some spacing around the chapters */
+            margin: 5px 0; /* Adjust vertical margin for better spacing */
+            cursor: pointer;
+        }
+
+        .chapter:hover {
+            background-color: #ebd8f0; /* Change background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="course-details">
+            <h1>Course Details</h1>
+        </br>
+            <h2>Course Name: Math</h2>
+            <h3>Instructor: Prof. x</h3>
+        </section>
+
+        <section id="chapters-section">
+            <h2>Chapters</h2>
+            <div class="chapter" onclick="location.href='chapter1.html'">Chapter 1: Introduction to the Course</div>
+            <div class="chapter" onclick="location.href='chapter2.html'">Chapter 2: The Fundamentals</div>
+            <div class="chapter" onclick="location.href='chapter3.html'">Chapter 3: Advanced Topics</div>
+            <!-- Add more chapters as needed -->
+        </section>
+
+        <button id="goBackButton">Go Back</button>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Student Study Portal</p>
+    </footer>
+
+    <script>
+        // Add an event listener to the "Go Back" button
+        document.getElementById("goBackButton").addEventListener("click", function () {
+            history.back(); // Navigate to the previous page in the browser's history
+        });
+    </script>
+</body>
+</html>
