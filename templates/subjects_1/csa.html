@@ -7,27 +7,104 @@
     <link rel="stylesheet" href="home.css">
     <style>
         .chapter {
-            border: 1px solid #ddd; /* Add a border */
-            padding: 10px; /* Add some spacing around the chapters */
-            margin: 5px 0; /* Adjust vertical margin for better spacing */
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
             cursor: pointer;
         }
 
         .chapter:hover {
-            background-color: #ebd8f0; /* Change background color on hover */
+            background-color: #ebd8f0;
         }
+        <style>
+            .chapter {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin: 5px 0;
+                cursor: pointer;
+            }
+    
+            .chapter:hover {
+                background-color: #ebd8f0;
+            }
+    
+            /* Add your additional CSS styles here */
+            body {
+                font-family: Arial, sans-serif;
+                background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+            }
+    
+            header {
+                background: linear-gradient(135deg, #BA9FD1, #C8A0CF);
+                border-radius: 25px;
+                padding: 10px 0;
+            }
+    
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+            }
+    
+            nav a {
+                text-decoration: none;
+                color: #333;
+            }
+    
+            main {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background: linear-gradient(to bottom, #AFD2E9, white);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 15px;
+            }
+    
+            section {
+                margin-bottom: 20px;
+            }
+    
+            h1, h2 {
+                color: #333;
+            }
+    
+            button {
+                background-color: #e1a6db;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+    
+            button:hover {
+                background-color: #ae79b6;
+            }
+    
+            select, input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+            }
+    
+            footer {
+                text-align: center;
+                background-color: #F2CEE6;
+                color: black;
+                padding: 10px 0;
+            }
+    
     </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="../../home">Home</a></li>
                 <li><a href="assignments.html">Assignments</a></li>
                 <li><a href="grades.html">Grades</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="logout.html">Logout</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -35,30 +112,49 @@
     <main>
         <section id="course-details">
             <h1>Course Details</h1>
-        </br>
+        <br>
             <h2>Course Name: Computer System Architecture</h2>
             <h3>Instructor: Prof. Akshay Bhatt</h3>
         </section>
 
         <section id="chapters-section">
             <h2>Chapters</h2>
-            <div class="chapter" onclick="location.href='chapter1.html'">Chapter 1: Introduction to the Course</div>
-            <div class="chapter" onclick="location.href='chapter2.html'">Chapter 2: The Fundamentals</div>
-            <div class="chapter" onclick="location.href='chapter3.html'">Chapter 3: Advanced Topics</div>
-            <!-- Add more chapters as needed -->
+            <div class="chapter">
+                <a href="https://drive.google.com/uc?export=download&id=1w3TqS-OIEV68bOwHQvc7TPF3vb7jjCLg">Chapter 1: Basic operation of Computer System and Introduction (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1w3TqS-OIEV68bOwHQvc7TPF3vb7jjCLg/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/uc?export=download&id=1KbHS98nL-WPidIL4pQztJiGE04GnPIDT">Chapter 2: Instruction Set Architecture (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1KbHS98nL-WPidIL4pQztJiGE04GnPIDT/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/uc?export=download&id=1_Ig9YcZhsgReduHt0YFigZxrZbXMEP7e">Chapter 3: Arithmetic and Logical Unit (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1_Ig9YcZhsgReduHt0YFigZxrZbXMEP7e/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/uc?export=download&id=1P6OHuf5YHOoNXenZkl6TpdysT0r-VMx3">Chapter 4: Basic Input/output Operations (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1P6OHuf5YHOoNXenZkl6TpdysT0r-VMx3/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/uc?export=download&id=1lon9-YxJTwnxyXQkyvYJPrssrjxAXIo_">Chapter 5: Memory Systems (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1lon9-YxJTwnxyXQkyvYJPrssrjxAXIo_/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/uc?export=download&id=1JP8xURF2ZedkSHM-wQjCiq0ink932sYO">Chapter 6: Introduction to Parallel Architecture and Pipelining (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1JP8xURF2ZedkSHM-wQjCiq0ink932sYO/preview" width="100%" height="500"></iframe>
+            </div>
         </section>
 
         <button id="goBackButton">Go Back</button>
     </main>
     
     <footer>
-        <p>&copy; 2023 Student Study Portal</p>
+        <p>&copy; <b>Project Procrastinate</b></p>
     </footer>
 
     <script>
-        // Add an event listener to the "Go Back" button
         document.getElementById("goBackButton").addEventListener("click", function () {
-            history.back(); // Navigate to the previous page in the browser's history
+            history.back();
         });
     </script>
 </body>
