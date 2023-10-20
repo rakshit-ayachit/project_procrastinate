@@ -7,14 +7,80 @@
     <link rel="stylesheet" href="home.css">
     <style>
         .chapter {
-            border: 1px solid #ddd; /* Add a border */
-            padding: 10px; /* Add some spacing around the chapters */
-            margin: 5px 0; /* Adjust vertical margin for better spacing */
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
             cursor: pointer;
         }
 
         .chapter:hover {
-            background-color: #ebd8f0; /* Change background color on hover */
+            background-color: #ebd8f0;
+        }
+
+        /* Add the CSS from csa.html here */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #BA9FD1, #C8A0CF);
+            border-radius: 25px;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #AFD2E9, white);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+        
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #e1a6db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ae79b6;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #F2CEE6;
+            color: black;
+            padding: 10px 0;
         }
     </style>
 </head>
@@ -22,12 +88,11 @@
     <header>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="../../home">Home</a></li>
                 <li><a href="assignments.html">Assignments</a></li>
                 <li><a href="grades.html">Grades</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="logout.html">Logout</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -35,16 +100,25 @@
     <main>
         <section id="course-details">
             <h1>Course Details</h1>
-        </br>
-            <h2>Course Name: Math</h2>
-            <h3>Instructor: Prof. x</h3>
+        <br>
+            <h2>Course Name: Computer System Architecture</h2>
+            <h3>Instructor: Prof. Akshay Bhatt</h3>
         </section>
 
         <section id="chapters-section">
             <h2>Chapters</h2>
-            <div class="chapter" onclick="location.href='chapter1.html'">Chapter 1: Introduction to the Course</div>
-            <div class="chapter" onclick="location.href='chapter2.html'">Chapter 2: The Fundamentals</div>
-            <div class="chapter" onclick="location.href='chapter3.html'">Chapter 3: Advanced Topics</div>
+            <div class="chapter">
+                <a href="https://placeholder-link-for-chapter1">Chapter 1: Placeholder Chapter 1</a>
+                <!-- Replace the placeholder link above with the actual link -->
+                <iframe src="https://placeholder-link-for-chapter1-preview" width="100%" height="500"></iframe>
+                <!-- Replace the placeholder link above with the actual link -->
+            </div>
+            <div class="chapter">
+                <a href="https://placeholder-link-for-chapter2">Chapter 2: Placeholder Chapter 2</a>
+                <!-- Replace the placeholder link above with the actual link -->
+                <iframe src="https://placeholder-link-for-chapter2-preview" width="100%" height="500"></iframe>
+                <!-- Replace the placeholder link above with the actual link -->
+            </div>
             <!-- Add more chapters as needed -->
         </section>
 
@@ -52,13 +126,12 @@
     </main>
     
     <footer>
-        <p>&copy; 2023 Student Study Portal</p>
+        <p>&copy; <b>Project Procrastinate</b></p>
     </footer>
 
     <script>
-        // Add an event listener to the "Go Back" button
         document.getElementById("goBackButton").addEventListener("click", function () {
-            history.back(); // Navigate to the previous page in the browser's history
+            history.back();
         });
     </script>
 </body>
