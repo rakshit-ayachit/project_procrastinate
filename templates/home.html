@@ -1,221 +1,218 @@
-{% comment %} <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Home Page</title>
-  </head>
-  <body>
-    <h1>Home Page</h1>
-    <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
-
-  </body>
-</html>  {% endcomment %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Study Portal</title>
-    <style>
-        .subject {
-            border: 1px solid #ddd; /* Add a border */
-            padding: 10px; /* Add some spacing around the chapters */
-            margin: 5px 0; /* Adjust vertical margin for better spacing */
-            cursor: pointer;
-        }
-
-        .subject:hover {
-            background-color: #f5f5f5; /* Change background color on hover */
-        }
-        /* Reset some default browser styles */
-body, h1, h2, p, ul, li, button, select, input {
-    margin: 0;
-    padding: 0;
-}
-
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light gray background */
-}
-
-header {
-    background-color: #ffcd68; /* Pastel yellow */
-    color: #333;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff; /* White background */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-h1, h2 {
-    color: #333;
-}
-
-ul {
-    list-style: none;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-button {
-    background-color: #e1a6db; /* button */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ae79b6; /*  on hover */
-}
-
-select, input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-}
-
-footer {
-    text-align: center;
-    background-color: #6fd3e0; /* Pastel blue */
-    color: #fff;
-    padding: 10px 0;
-}
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li> 
-                <li><a href="assignments.html">Assignments</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Study Portal</title>
+        <style>
+            .subject {
+                border: 1px solid #ddd; /* Add a border */
+                padding: 10px; /* Add some spacing around the chapters */
+                margin: 5px 0; /* Adjust vertical margin for better spacing */
+                cursor: pointer;
+            }
     
-    <main>
-        <section id="welcome-section">
-            <h1>Welcome to your personalised Study Zone!</h1>
-            <p>This is your student study portal, where you can access your courses, senior notes, resources used by students over the years. </p>
-            <p> And whats more? Ask our chatbot all of your questions.</p>
-        </section>
-        
-        <section id="courses-section">
-            <h1>Your Courses</h1>
-            <div class="subject" button onclick="location.href='{% url 'dsa' %}'">
-                <h2>DSA</h2>
-                <p>Instructor: Prof. Smith</p>
-                <p>Next Class: Monday, 10:00 AM</p>
-
-            </div>
-            <div class="subject" button onclick="location.href='{% url 'csa' %}'">
-                <h2>CSA</h2>
-                <p>Instructor: Prof. Johnson</p>
-                <p>Next Class: Tuesday, 2:00 PM</p>
-                
-            </div>
-            <div class="subject" button onclick="location.href='{% url 'oop' %}'">
-                <h2>OOP</h2>
-                <p>Instructor: Prof. Brown</p>
-                <p>Next Class: Wednesday, 3:00 PM</p>
-            </div>
-            <div class="subject" button onclick="location.href='{% url 'fne' %}'">
-                <h2>FNE</h2>
-                <p>Instructor: Prof. Davis</p>
-                <p>Next Class: Thursday, 4:00 PM</p>
-            </div>
-            <div class="subject" button onclick="location.href='{% url 'math' %}'">
-                <h2>MATH</h2>
-                <p>Instructor: Prof. Lee</p>
-                <p>Next Class: Friday, 5:00 PM</p>
-            </div>
-            
-            <!-- Add more subjects as needed -->
-        </section>
-
-<section id="add-course-section">
-    <h2>Add a New Course</h2>
-    <form id="addCourseForm">
-        <label for="selectCourse">Select a Course:</label>
-        <select id="selectCourse" name="selectCourse" required>
-            <option value="OOP">OOP</option>
-            <option value="MATH">MATH</option>
-            <option value="FNE">FNE</option>
-            <!-- Add more predefined courses as needed -->
-        </select>
-        <br>
-        <label for="classTime">Next Class Time:</label>
-        <input type="text" id="classTime" name="classTime" required>
-        <br>
-        <button type="button" id="addCourseButton">Add Course</button>
-    </form>
-</section>
-</main>
-
-<footer>
-<p>&copy; 2023 Student Study Portal</p>
-</footer>
-<script>
-
-    function removeCourse(courseDiv) {
-        courseDiv.remove();
+            .subject:hover {
+                background-color: #f5f5f5; /* Change background color on hover */
+            }
+    body {
+              background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+              background-size: cover;
+              background-repeat: no-repeat;
+              border-radius: 25px;
+              background-attachment: fixed;
+              font-family: "Open Sans", sans-serif;
+              color: #333333;
+            }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #C84630; /* Light gray background */
     }
-
-    // Add the "Remove" button to pre-created cours e divs
-    document.querySelectorAll('.subject').forEach(function(courseDiv) {
-        const removeButton = document.createElement('button');
-        removeButton.className = 'remove-button';
-        removeButton.textContent = 'X';
-        removeButton.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent the course div from being clicked
-            removeCourse(courseDiv);
-        });
-        courseDiv.appendChild(removeButton);
-    });
-
-    // Add the "Remove" button to dynamically created course divs
-    document.getElementById("addCourseButton").addEventListener("click", function () {
-        const selectedCourse = document.getElementById("selectCourse").value;
-        const classTime = document.getElementById("classTime").value;
+    
+    header {
+      background: linear-gradient(135deg, #BA9FD1, #C8A0CF);
+      border-radius: 25px;
+      padding: 10px 0;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: linear-gradient(to bottom, #AFD2E9, white);; /* White background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 15px
+    }
+    
+    section {
+        margin-bottom: 20px;
+    }
+    
+    h1, h2 {
+        color: #333;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    li {
+        margin-bottom: 10px;
+    }
+    
+    button {
+        background-color: #e1a6db; /* button */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #ae79b6; /*  on hover */
+    }
+    
+    select, input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+    
+    footer {
+        text-align: center;
+        background-color: #F2CEE6;
+        color: black;
+        padding: 10px 0;
+    }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="home.html"><b>Home</b></a></li> 
+                    <li><a href="assignments.html"><b>Assignments</b></a></li>
+                    <li><a href="profile.html"><b>Profile</b></a></li>
+                    <li><a href="{% url 'logout' %}"><b>Logout</b></a></li>
+                </ul>
+            </nav>
+        </header>
         
-        if (selectedCourse) {
+        <main>
+          <section id="welcome-section" style="text-align: center;">
+            <h1>Welcome to your personalised Study Zone!</h1>
+                <p>This is your student study portal, where you can access your courses, senior notes, resources used by students over the years. </p>
+                <p> And whats more? Ask our chatbot all of your questions.</p>
+            </section>
+            
+            <section id="courses-section">
+                <h1>Your Courses</h1>
+                <div class="subject" button onclick="location.href='{% url 'dsa' %}'">
+                    <h2>DSA</h2>
+                    <p>Instructor: Prof. Smith</p>
+                    <p>Next Class: Monday, 10:00 AM</p>
+    
+                </div>
+                <div class="subject" button onclick="location.href='{% url 'csa' %}'">
+                    <h2>CSA</h2>
+                    <p>Instructor: Prof. Johnson</p>
+                    <p>Next Class: Tuesday, 2:00 PM</p>
+                    
+                </div>
+                <div class="subject" button onclick="location.href='{% url 'oop' %}'">
+                    <h2>OOP</h2>
+                    <p>Instructor: Prof. Brown</p>
+                    <p>Next Class: Wednesday, 3:00 PM</p>
+                </div>
+                <div class="subject" button onclick="location.href='{% url 'fne' %}'">
+                    <h2>FNE</h2>
+                    <p>Instructor: Prof. Davis</p>
+                    <p>Next Class: Thursday, 4:00 PM</p>
+                </div>
+                <div class="subject" button onclick="location.href='{% url 'math' %}'">
+                    <h2>MATH</h2>
+                    <p>Instructor: Prof. Lee</p>
+                    <p>Next Class: Friday, 5:00 PM</p>
+                </div>
+                
+                <!-- Add more subjects as needed -->
+            </section>
+    
+            <section id="add-course-section">
+                <h2>Add a New Course</h2>
+                <form id="addCourseForm">
+                    <label for="selectBranch">Select a Branch:</label>
+                    <select id="selectBranch" name="selectBranch" required>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <!-- Add more branches as needed -->
+                    </select>
+                    <br>
+                    <label for="selectSemester">Select a Semester:</label>
+                    <select id="selectSemester" name="selectSemester" required>
+                        <option value="1st Semester">1st Semester</option>
+                        <option value="2nd Semester">2nd Semester</option>
+                        <option value="3rd Semester">3rd Semester</option>
+                        <!-- Add more semesters as needed -->
+                    </select>
+                    <br>
+                    <label for="selectCourse">Select a Course:</label>
+                    <select id="selectCourse" name="selectCourse" required>
+                        <option value="OOP">OOP</option>
+                        <option value="MATH">MATH</option>
+                        <option value="FNE">FNE</option>
+                        <!-- Add more predefined courses as needed -->
+                    </select>
+                    <br>
+                    <label for="classTime">Next Class Time:</label>
+                    <input type="text" id="classTime" name="classTime" required>
+                    <br>
+                    <button type="button" id="addCourseButton">Add Course</button>
+                </form>
+            </section>
+                    </main>
+    
+    <footer>
+    <p>&copy; <b>Project Procrastinate</b></p>
+    </footer>
+    <script>
+        function removeCourse(courseDiv) {
+            courseDiv.remove();
+        }
+    
+        // Add the "Remove" button to pre-created course divs
+        document.querySelectorAll('.subject').forEach(function(courseDiv) {
+            const removeButton = document.createElement('button');
+            removeButton.className = 'remove-button';
+            removeButton.textContent = 'X';
+            removeButton.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the course div from being clicked
+                removeCourse(courseDiv);
+            });
+            courseDiv.appendChild(removeButton);
+        });
+    
+        // Function to create a new course div with Branch, Semester, and Remove button
+        function createCourseDiv(branch, semester, selectedCourse, classTime) {
             const courseDiv = document.createElement("div");
             courseDiv.classList.add("subject");
             courseDiv.innerHTML = `
                 <h2>${selectedCourse}</h2>
+                <p>Branch: ${branch}</p>
+                <p>Semester: ${semester}</p>
                 <p>Class Time: ${classTime}</p>
             `;
             const removeButton = document.createElement('button');
@@ -226,16 +223,28 @@ footer {
                 removeCourse(courseDiv);
             });
             courseDiv.appendChild(removeButton);
-
+    
             courseDiv.onclick = function() {
                 location.href = `${selectedCourse}.html`;
             };
-
-            document.getElementById("courses-section").appendChild(courseDiv);
+    
+            return courseDiv;
         }
-    });
-</script>
-
-
-</body>
-</html>
+    
+        document.getElementById("addCourseButton").addEventListener("click", function () {
+            const selectedBranch = document.getElementById("selectBranch").value;
+            const selectedSemester = document.getElementById("selectSemester").value;
+            const selectedCourse = document.getElementById("selectCourse").value;
+            const classTime = document.getElementById("classTime").value;
+            
+            if (selectedBranch && selectedSemester && selectedCourse) {
+                const courseDiv = createCourseDiv(selectedBranch, selectedSemester, selectedCourse, classTime);
+                document.getElementById("courses-section").appendChild(courseDiv);
+            }
+        });
+    </script>
+    
+    
+    </body>
+    </html>
+    
