@@ -5,6 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Student Study Portal</title>
         <style>
+            .chatbot-button {
+                position: fixed;
+                border-radius: 20px;
+                bottom: 20px; /* Adjust the distance from the bottom as needed */
+                right: 20px; /* Adjust the distance from the right as needed */
+                z-index: 999; /* Ensure it appears above other content */
+            }
+    
             .subject {
                 border: 1px solid #ddd; /* Add a border */
                 padding: 10px; /* Add some spacing around the chapters */
@@ -149,6 +157,8 @@
                 
                 <!-- Add more subjects as needed -->
             </section>
+            <button id="open-chatbot-popup" class="chatbot-button">Chat with our Assistant</button>
+
     
             <section id="add-course-section">
                 <h2>Add a New Course</h2>
@@ -242,6 +252,22 @@
                 document.getElementById("courses-section").appendChild(courseDiv);
             }
         });
+                // Function to open the chatbot popup
+        function openChatbotPopup() {
+            const chatbotUrl = "https://procrastinate.streamlit.app"; // Replace with your Streamlit app URL
+            const width = 300; // Adjust the width as needed
+            const height = 500; // Adjust the height as needed
+            const left = window.innerWidth - width - 40; // Move the window to the rightmost side
+            const top = (window.innerHeight - height) / 2 + 50;
+
+            // Open a popup window with specified dimensions
+            const chatbotWindow = window.open(chatbotUrl, "ChatbotPopup", `width=${width}, height=${height}, left=${left}, top=${top}`);
+            chatbotWindow.focus(); // Focus on the popup window
+        }
+
+        // Attach the function to the button click event
+        document.getElementById("open-chatbot-popup").addEventListener("click", openChatbotPopup);
+
     </script>
     
     
