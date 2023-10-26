@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout Page</title>
+    <style>
+        /* Add custom CSS styles for success message pop-up */
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #FFCAD4;
+            color: black;
+            border: 1px solid #388E3C;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Success message pop-up -->
+    <div id="success-popup" class="success-popup">
+        <span>Successful Logout</span>
+        <span> ...Redirecting to Login Page </span>    
+    </div>
+
+    <script>
+        // JavaScript function to show the success pop-up message
+        function showSuccessPopup(message) {
+            const successPopup = document.getElementById('success-popup');
+            successPopup.style.display = 'block';
+
+            // After a brief delay, hide the pop-up and proceed to the login page
+            setTimeout(() => {
+                successPopup.style.display = 'none';
+                window.location.href = '{% url "login" %}';  // Redirect to the login page
+            }, 2000);  // Adjust the delay duration (in milliseconds) as needed
+        }
+
+        const successMessage = '{{ success_message }}';  // Fetch success_message from Django context
+        if (successMessage) {
+            showSuccessPopup(successMessage);
+        }
+    </script>
+</body>
+</html>
