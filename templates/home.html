@@ -128,33 +128,20 @@
             <section id="courses-section">
                 <h1>Your Courses</h1>
                 <div class="subject" button onclick="location.href='{% url 'dsa' %}'">
-                    <h2>DSA</h2>
-                    <p>Instructor: Prof. Smith</p>
-                    <p>Next Class: Monday, 10:00 AM</p>
-    
+                    <h2>Data Structures & Algorithms</h2>
                 </div>
                 <div class="subject" button onclick="location.href='{% url 'csa' %}'">
-                    <h2>CSA</h2>
-                    <p>Instructor: Prof. Johnson</p>
-                    <p>Next Class: Tuesday, 2:00 PM</p>
-                    
+                    <h2>Computer System Architecture</h2> 
                 </div>
                 <div class="subject" button onclick="location.href='{% url 'oop' %}'">
-                    <h2>OOP</h2>
-                    <p>Instructor: Prof. Brown</p>
-                    <p>Next Class: Wednesday, 3:00 PM</p>
+                    <h2>Object Oriented Programming</h2>
                 </div>
                 <div class="subject" button onclick="location.href='{% url 'fne' %}'">
-                    <h2>FNE</h2>
-                    <p>Instructor: Prof. Davis</p>
-                    <p>Next Class: Thursday, 4:00 PM</p>
+                    <h2>Finance & Econometrics</h2>
                 </div>
                 <div class="subject" button onclick="location.href='{% url 'math' %}'">
-                    <h2>MATH</h2>
-                    <p>Instructor: Prof. Lee</p>
-                    <p>Next Class: Friday, 5:00 PM</p>
+                    <h2>Mathematical Foundation for Data Science</h2>
                 </div>
-                
                 <!-- Add more subjects as needed -->
             </section>
             <button id="open-chatbot-popup" class="chatbot-button">Chat with our Assistant</button>
@@ -179,15 +166,11 @@
                     <br>
                     <label for="selectCourse">Select a Course:</label>
                     <select id="selectCourse" name="selectCourse" required>
-                        <option value="OOP">OOP</option>
-                        <option value="MATH">MATH</option>
-                        <option value="FNE">FNE</option>
+                        <option value="OOP">Object Oriented Programming</option>
+                        <option value="MATH">Mathematical Foundation for Data Science</option>
+                        <option value="FNE">Finance & Econometrics</option>
                         <!-- Add more predefined courses as needed -->
                     </select>
-                    <br>
-                    <label for="classTime">Next Class Time:</label>
-                    <input type="text" id="classTime" name="classTime" required>
-                    <br>
                     <button type="button" id="addCourseButton">Add Course</button>
                 </form>
             </section>
@@ -221,7 +204,6 @@
                 <h2>${selectedCourse}</h2>
                 <p>Branch: ${branch}</p>
                 <p>Semester: ${semester}</p>
-                <p>Class Time: ${classTime}</p>
             `;
             const removeButton = document.createElement('button');
             removeButton.className = 'remove-button';
@@ -243,10 +225,9 @@
             const selectedBranch = document.getElementById("selectBranch").value;
             const selectedSemester = document.getElementById("selectSemester").value;
             const selectedCourse = document.getElementById("selectCourse").value;
-            const classTime = document.getElementById("classTime").value;
             
             if (selectedBranch && selectedSemester && selectedCourse) {
-                const courseDiv = createCourseDiv(selectedBranch, selectedSemester, selectedCourse, classTime);
+                const courseDiv = createCourseDiv(selectedBranch, selectedSemester, selectedCourse);
                 document.getElementById("courses-section").appendChild(courseDiv);
             }
         });
@@ -267,8 +248,7 @@
         document.getElementById("open-chatbot-popup").addEventListener("click", openChatbotPopup);
 
     </script>
-    
-    
+
+        
     </body>
     </html>
-    
