@@ -6,6 +6,28 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <style>
+    .error-popup {
+      display: none;
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #E5F9E0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      text-align: center;
+  }
+
+  .close-error-popup {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+  }
+
     body {
         background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
         background-size: cover;
@@ -42,7 +64,6 @@
         color: #FFFFFF;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url("1.jpg");
         overflow: hidden;
       }
       .box-form .left .overlay {
@@ -200,5 +221,32 @@
       </form>
     </div>
   </div>
+
+  <div id="error-popup" class="error-popup">
+    <span id="error-message">Invalid username or password. Please try again.</span>
+    <span class="close-error-popup" id="close-error-popup" onclick="closeErrorPopup()">&times;</span>
+</div>
+
+<script>
+    // JavaScript function to show the error pop-up message
+    function showErrorPopup(message) {
+        const errorPopup = document.getElementById('error-popup');
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.innerText = message;
+        errorPopup.style.display = 'block';
+    }
+
+    // JavaScript function to close the error pop-up message
+    function closeErrorPopup() {
+        const errorPopup = document.getElementById('error-popup');
+        errorPopup.style.display = 'none';
+    }
+
+    // Check if there is an error message and show the error pop-up if it exists
+    const errorMessage = '{{ error_message }}';  // Fetch error_message from Django context
+    if (errorMessage) {
+        showErrorPopup(errorMessage);
+    }
+</script>
 </body>
 </html>
