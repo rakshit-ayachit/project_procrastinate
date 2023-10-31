@@ -22,16 +22,12 @@ urlpatterns = [
     path('login/',views.LoginPage,name='login'),
     path('home/',views.HomePage,name='home'),
     path('logout/',views.LogoutPage,name='logout'),
-    # path('dsa/', views.dsa_view, name='dsa'),
-    # path('csa/', views.csa_view, name='csa'),
-    # path('oop/', views.oop_view, name='oop'),
-    # path('fne/', views.fne_view, name='fne'),
-    # path('math/', views.math_view, name='math'),
-    path('subjects_1/math/', views.math_view, name='math'),
-    path('subjects_1/fne/', views.fne_view, name='fne'),
-    path('subjects_1/oop/', views.oop_view, name='oop'),
-    path('subjects_1/csa/', views.csa_view, name='csa'),
-    path('subjects_1/dsa/', views.dsa_view, name='dsa'),
+    path('subjects_1/computer-system-architecture/', views.computer_system_architecture, name='computer_system_architecture'),
+    path('subjects_1/introduction-to-data-analytics/', views.introduction_to_data_analytics, name='introduction_to_data_analytics'),
+    path('subjects_1/data-structures/', views.data_structures, name='data_structures'),
+    path('subjects_1/mathematical-foundations/', views.mathematical_foundations, name='mathematical_foundations'),
+    path('subjects_1/object-oriented-programming/', views.object_oriented_programming, name='object_oriented_programming'),
+    path('subjects_1/finance-econometrics/', views.finance_econometrics, name='finance_econometrics'),
 
 
 
