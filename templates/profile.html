@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Study Portal</title>
+    <style>
+        .chatbot-button {
+            position: fixed;
+            border-radius: 20px;
+            bottom: 20px; /* Adjust the distance from the bottom as needed */
+            right: 20px; /* Adjust the distance from the right as needed */
+            z-index: 999; /* Ensure it appears above other content */
+        }
+
+        .subject {
+            border: 1px solid #ddd; /* Add a border */
+            padding: 10px; /* Add some spacing around the chapters */
+            margin: 5px 0; /* Adjust vertical margin for better spacing */
+            cursor: pointer;
+        }
+
+        .subject:hover {
+            background-color: #f5f5f5; /* Change background color on hover */
+        }
+body {
+          background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+          background-size: cover;
+          background-repeat: no-repeat;
+          border-radius: 25px;
+          background-attachment: fixed;
+          font-family: "Open Sans", sans-serif;
+          color: #333333;
+        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #C84630; /* Light gray background */
+}
+
+header {
+  background: linear-gradient(135deg, #BA9FD1, #C8A0CF);
+  border-radius: 25px;
+  padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #AFD2E9, white);; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #e1a6db; /* button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ae79b6; /*  on hover */
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    background-color: #F2CEE6;
+    color: black;
+    padding: 10px 0;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}"><b>Home</b></a></li>
+                <li><a href="assignments.html"><b>Assignments</b></a></li>
+                <li><a href="profile.html"><b>Profile</b></a></li>
+                <li><a href="{% url 'logout' %}"><b>Logout</b></a></li>
+            </ul>
+        </nav>
+</header>
+ 
+    <main>
+        <section>
+            <h1>User Profile</h1>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>First Name:</strong> {{ user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Age:</strong> {{ user.age }}</p>
+            <p><strong>Additional Information:</strong> {{ user_profile.additional_info }}</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <b>Project Procrastinate</b></p>
+    </footer>
+</body>
+</html>
