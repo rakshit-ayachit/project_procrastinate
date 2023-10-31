@@ -28,8 +28,7 @@ urlpatterns = [
     path('subjects_1/mathematical-foundations/', views.mathematical_foundations, name='mathematical_foundations'),
     path('subjects_1/object-oriented-programming/', views.object_oriented_programming, name='object_oriented_programming'),
     path('subjects_1/finance-econometrics/', views.finance_econometrics, name='finance_econometrics'),
-
-
+    path('profile/',views.profile,name='profile'),
 
     
 ]
