@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import logging
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def HomePage(request):
     return render (request,'home.html')
     
@@ -23,68 +23,34 @@ def SignupPage(request):
             my_user.save()
             return redirect('login')
     
-        
-
-
-
     return render (request,'signup.html')
 
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+
 def LoginPage(request):
-    if request.method=='POST':
-        username=request.POST.get('username')
-        pass1=request.POST.get('pass')
-        user=authenticate(request,username=username,password=pass1)
+    error_message = None  
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request,user)
+            login(request, user)
             return redirect('home')
         else:
-            return redirect('home')
+            error_message = "Invalid username or password. Please try again."
 
-    return render (request,'login.html')
-# def LoginPage(request):
-#     logger = logging.getLogger(__name__)
-
-#     if request.method == 'POST':
-#         username = request.POST.get('username')
-#         pass1 = request.POST.get('pass')
-
-#         logger.debug(f"Attempting login for username: {username}")
-
-#         user = authenticate(request, username=username, password=pass1)
-
-#         if user is not None:
-#             return HttpResponse("Username or Password is incorrect!!!")
-
-#         else:
-#             # logger.debug(f"Login failed for user: {username}")
-#             # return HttpResponse("Username or Password is incorrect!!!")
-#             login(request, user)
-#             return redirect('home')
+    return render(request, 'login.html', {'error_message': error_message})
 
 
-
-    return render(request, 'login.html')
-
-    
+from django.shortcuts import render
+from django.contrib import messages
 
 def LogoutPage(request):
     logout(request)
-    return redirect('login')
-
-# def dsa_view(request):
-#     return render(request, 'dsa.html')
-
-# def csa_view(request):
-#     return render(request, 'csa.html')
-
-# def oop_view(request):
-#     return render(request, 'oop.html')
-
-# def fne_view(request):
-#     return render(request, 'fne.html')
-
-# def math_view(request):
-#     return render(request, 'math.html')
+    messages.success(request, "Successful Logout")
+    return render(request, 'logout.html', {'success_message': messages.get_messages(request)})
 
 def computer_system_architecture(request):
     return render(request, 'subjects_1/computer_system_architecture.html')
@@ -103,3 +69,9 @@ def object_oriented_programming(request):
 
 def finance_econometrics(request):
     return render(request, 'subjects_1/finance_econometrics.html')
+
+def profile(request):
+    if request.method=='POST':
+        user = User.objects.get(user=request.user)
+        user.username=user.username
+    return render(request, 'profile.html')
