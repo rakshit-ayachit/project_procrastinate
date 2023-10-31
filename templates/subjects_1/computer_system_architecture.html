@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .chapter {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .chapter:hover {
+            background-color: #ebd8f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #BA9FD1, #C8A0CF);
+            border-radius: 25px;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #AFD2E9, white);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        button {
+            background-color: #e1a6db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ae79b6;
+        }
+
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../home">Home</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="course-details">
+            <h1>Course Details</h1>
+            <br>
+            <h2>Course Name: Computer System Architecture</h2>
+            <h3>Instructor: Prof. Akshay Bhatt</h3>
+        </section>
+
+        <section id="chapters-section">
+            <h2>Chapters</h2>
+            <div class="chapter">
+                <a href="https://drive.google.com/file/d/1pbtVRRejpxBHJ2s968gDiSef-1XoZHDL/view?usp=drive_link">Chapter 1: Unit 1_Introduction (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1pbtVRRejpxBHJ2s968gDiSef-1XoZHDL/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/file/d/1l0z8wJSQsTbOTQIFRsnp9k6bMANfSlIc/view?usp=drive_link">Chapter 2: Unit 2_ Instruction_SetArchitecture (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1l0z8wJSQsTbOTQIFRsnp9k6bMANfSlIc/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/file/d/1yBYq9ukk6f-I6k6FJYxPwUzlyLpFqFk2/view?usp=drive_link">Chapter 3: Unit 3_ALU22 (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1yBYq9ukk6f-I6k6FJYxPwUzlyLpFqFk2/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/file/d/1_OZFPM2TrDKPEusclpyvZmn5BaEU2H0Q/view?usp=drive_link">Chapter 4: Unit 4_IO_22 (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1_OZFPM2TrDKPEusclpyvZmn5BaEU2H0Q/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/file/d/12zKFgJD1i1Q3dG0e9h9W99EKf6oYL-8D/view?usp=drive_link">Chapter 5: Unit 5_Mem (Download)</a>
+                <iframe src="https://drive.google.com/file/d/12zKFgJD1i1Q3dG0e9h9W99EKf6oYL-8D/preview" width="100%" height="500"></iframe>
+            </div>
+            <div class="chapter">
+                <a href="https://drive.google.com/file/d/1-dYzmC3ySWyybYqZTzY4wNSsw7isLd5A/view?usp=drive_link">Chapter 6: Unit6_Pipelineorganization (Download)</a>
+                <iframe src="https://drive.google.com/file/d/1-dYzmC3ySWyybYqZTzY4wNSsw7isLd5A/preview" width="100%" height="500"></iframe>
+            </div>
+        </section>
+
+        <button id="goBackButton">Go Back</button>
+    </main>
+    
+    <footer>
+        <p>&copy; <b>Project Procrastinate</b></p>
+    </footer>
+
+    <script>
+        document.getElementById("goBackButton").addEventListener("click", function () {
+            history.back();
+        });
+    </script>
+</body>
+</html>
