@@ -86,17 +86,20 @@ def LogoutPage(request):
 # def math_view(request):
 #     return render(request, 'math.html')
 
-def math_view(request):
-    return render(request, 'subjects_1/math.html')
+def computer_system_architecture(request):
+    return render(request, 'subjects_1/computer_system_architecture.html')
 
-def fne_view(request):
-    return render(request, 'subjects_1/fne.html')
+def introduction_to_data_analytics(request):
+    return render(request, 'subjects_1/introduction_to_data_analytics.html')
 
-def oop_view(request):
-    return render(request, 'subjects_1/oop.html')
+def data_structures(request):
+    return render(request, 'subjects_1/data_structures.html')
 
-def csa_view(request):
-    return render(request, 'subjects_1/csa.html')
+def mathematical_foundations(request):
+    return render(request, 'subjects_1/mathematical_foundations.html')
 
-def dsa_view(request):
-    return render(request, 'subjects_1/dsa.html')
+def object_oriented_programming(request):
+    return render(request, 'subjects_1/object_oriented_programming.html')
+
+def finance_econometrics(request):
+    return render(request, 'subjects_1/finance_econometrics.html')
