@@ -214,7 +214,7 @@
             <input type="checkbox" id="remember" name="remember" {% if remember %}checked{% endif %}>
             <span class="text-checkbox">Remember me</span>
           </label>
-          <a href="#">Forgot Password?</a>
+          {% comment %} <a href="#">Forgot Password?</a> {% endcomment %}
         </div>
         <button type="submit">Log In</button>
         <a href="{% url 'signup' %}">Create an account</a>
