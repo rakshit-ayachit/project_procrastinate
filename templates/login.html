@@ -211,7 +211,7 @@
         </div>
         <div class="remember-me--forget-password">
           <label>
-            <input type="checkbox" name="remember" checked>
+            <input type="checkbox" id="remember" name="remember" {% if remember %}checked{% endif %}>
             <span class="text-checkbox">Remember me</span>
           </label>
           <a href="#">Forgot Password?</a>
@@ -243,10 +243,19 @@
     }
 
     // Check if there is an error message and show the error pop-up if it exists
-    const errorMessage = '{{ error_message }}';  // Fetch error_message from Django context
-    if (errorMessage) {
+    const errorMessage = '{{ error_message|default:"" }}';  // Fetch error_message from Django context
+    if (errorMessage.trim() !== "") {
         showErrorPopup(errorMessage);
-    }
+        }
+      function toggleCheckbox() {
+      const rememberCheckbox = document.getElementById('remember');
+      rememberCheckbox.checked = !rememberCheckbox.checked;
+  }
+
+  // Add a click event listener to the label for the checkbox
+  const checkboxLabel = document.querySelector('label[for="remember"]');
+  checkboxLabel.addEventListener('click', toggleCheckbox);
+
 </script>
 </body>
 </html>
