@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        .chatbot-button {
+            position: fixed;
+            border-radius: 20px;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .subject {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .subject:hover {
+            background-color: #f5f5f5;
+        }
+
+        body {
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 25px;
+            background-attachment: fixed;
+            font-family: "Open Sans", sans-serif;
+            color: #333333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C84630;
+        }
+
+        header {
+            background: linear-gradient(135deg, #BA9FD1, #C8A0CF);
+            border-radius: 25px;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #AFD2E9, white);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #e1a6db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ae79b6;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #F2CEE6;
+            color: black;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form method="post" id="edit-profile-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Confirm Changes</button>
+    </form>
+        <p id="confirmation-message" style="display: none; color: red;">Changes have been confirmed</p>
+
+    <script>
+        document.getElementById("edit-profile-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the form from submitting
+        
+            // Simulate a delay to show the confirmation message
+            const confirmationMessage = document.getElementById("confirmation-message");
+            confirmationMessage.style.display = "block";
+        
+            // Delay for 2 seconds (2000 milliseconds)
+            setTimeout(function () {
+                confirmationMessage.style.display = "none"; // Hide the confirmation message
+                window.location.href = "{% url 'profile' %}"; // Redirect back to the profile page
+            }, 2000);
+        });
+            </script>
+
+
+</body>
+</html>
