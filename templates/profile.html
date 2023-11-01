@@ -83,6 +83,7 @@ button {
     background-color: #e1a6db; /* button */
     color: #fff;
     padding: 10px 20px;
+    border-radius:20px;
     border: none;
     cursor: pointer;
 }
@@ -125,9 +126,10 @@ footer {
             <p><strong>First Name:</strong> {{ user.first_name }}</p>
             <p><strong>Last Name:</strong> {{ user.last_name }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
-            <p><strong>Age:</strong> {{ user.age }}</p>
-            <p><strong>Additional Information:</strong> {{ user_profile.additional_info }}</p>
         </section>
+
+        <a href="{% url 'edit_profile' %}"><button>Edit Profile</button></a>
+
     </main>
     
     <footer>
