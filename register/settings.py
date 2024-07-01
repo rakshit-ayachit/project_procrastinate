@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0m+r6jp669a#ik7)-rstie^j9xgp9&kujyoz3pm_exvz6)4+*#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['project-procrastinate.onrender.com']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1',
 ]
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
